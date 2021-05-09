@@ -1,11 +1,13 @@
-import "./App.css";
-import AlbumFeature from "./features/Album";
-import TodoFeature from "./features/Todo";
-import { NavLink, Route, Switch } from "react-router-dom";
-import NotFound from "./components/NotFound";
+import Header from "components/Header";
+import ProductFeature from "features/Product";
 import { useEffect } from "react";
+import { Route, Switch } from "react-router-dom";
 import productApi from "./api/productApi";
+import "./App.css";
+import NotFound from "./components/NotFound";
+import AlbumFeature from "./features/Album";
 import CounterFeature from "./features/Counter";
+import TodoFeature from "./features/Todo";
 
 function App() {
   useEffect(() => {
@@ -20,21 +22,13 @@ function App() {
   }, []);
   return (
     <div>
-      <h2> Home Page</h2>
-      <p>
-        <NavLink to='/todos' activeClassName='active-menu'>
-          Todos
-        </NavLink>
-      </p>
-      <p>
-        <NavLink to='/albums' activeClassName='active-menu'>
-          Album
-        </NavLink>
-      </p>
+      <Header />
+
       <Switch>
         <Route path='/' component={CounterFeature} exact />
         <Route path='/todos' component={TodoFeature} exact />
         <Route path='/albums' component={AlbumFeature} />
+        <Route path='/products' component={ProductFeature} />
         <Route component={NotFound} />
       </Switch>
     </div>
