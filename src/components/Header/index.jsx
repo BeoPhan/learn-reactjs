@@ -81,7 +81,7 @@ export default function Header() {
           <CodeIcon className={classes.menuButton}></CodeIcon>
           <Typography variant='h6' className={classes.title}>
             <Link className={classes.link} to='/'>
-              EZ Shop
+              Beo Phan
             </Link>
           </Typography>
           <NavLink className={classes.link} to='/products'>
